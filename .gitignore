@@ -5,4 +5,4 @@ node_modules/
 declare.md
 
 # development changes
-./build/*
+build/
