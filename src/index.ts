@@ -1,4 +1,8 @@
 import express from 'express';
+import bookingsRoutes from './bookings/bookingRoutes';
+import env from 'dotenv';
+
+env.config();
 
 const app = express();
 app.use(express.json());
@@ -11,6 +15,8 @@ app.get('/ping', (_req, res) => {
   console.log('someone pinged me!');
   res.send('pong');
 })
+
+app.use('/api/bookings', bookingsRoutes);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
