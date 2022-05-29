@@ -25,7 +25,7 @@ Base API endpoint `/api`
 
 #### `GET` `/api/bookings`
 
-returns all Bookings data
+returns all Bookings data, [Bookings []](#booking)
 
 example request:
 
@@ -33,7 +33,7 @@ example request:
 
 example return:
 
-```sh
+```json
 [
   {
     "id": 1,
@@ -49,7 +49,7 @@ example return:
     "paymentAmount": 150,
     "payMethod": "Credit Card"
   },
-  ...
+  // ...
 ]
 ```
 
@@ -63,7 +63,7 @@ example request:
 
 example return:
 
-```sh
+```json
 {
   "id": 5,
   "roomId": 5,
@@ -82,13 +82,13 @@ example return:
 
 #### `POST` `/api/bookings`
 
-returns a Bookings data from `id` if this exists or `status: 404` `Booking not found`
+returns a new Booking with `id` field added
 
 example request:
 
 `POST` `http://hostserver:port/api/bookings/5`
 
-```js
+```json
   body: {
     "roomId": 1,
     "roomNumber": 1,
@@ -105,9 +105,7 @@ example request:
 
 Example return:
 
-Added the new booking field id in response: `"id": 16`.
-
-```js
+```json
 {
   "roomId": 1,
   "roomNumber": 1,
@@ -118,7 +116,7 @@ Added the new booking field id in response: `"id": 16`.
   "paymentAmount": 4818,
   "clientName": "Dona Maharey",
   "clientPhone": "487-243-6988",
-  "id": 16
+  "id": 16 // Added the new booking field id in response: `"id": 16`.
 }
 ```
 
@@ -135,6 +133,42 @@ Example:
 ```
 
 Return status code `400 Bad request` and message: `Booking status incorrect or missing field`
+
+#### `PUT` `/api/bookings/:id`
+
+Update the booking `id` if this exists or sent status code `400 bad request`
+Require **req.body** with the Booking data
+
+Example request:
+
+`PUT` `http://hostserver:port/api/bookings`
+
+*body* [Booking](#booking) example, the response data is the same:
+
+```json
+{
+  "roomId": 1,
+  "roomNumber": 1,
+  "checkIn": "2022/01/17",
+  "daysOfStay": 16,
+  "bookingStatus": "Pagado",
+  "payMethod": "Tarjeta de crédito",
+  "paymentAmount": 4818,
+  "clientName": "Dona Maharey",
+  "clientPhone": "487-243-6988",
+  "id": 16
+}
+```
+
+prev data:
+
+```json
+{
+  // ...,
+  "bookingStatus": "Pendiente",
+  // ...
+}
+```
 
 ## Booking Interface, Types & Enums
 

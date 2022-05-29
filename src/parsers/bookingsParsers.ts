@@ -1,5 +1,5 @@
 import { BookingEntry } from '../bookings/bookingTypes'
-import { BookingStatus, PayMethod } from '../bookings/emuns'
+import { BookingStatus, PayMethod } from '../bookings/enums'
 
 import rooms from '../mock/rooms.json'
 
