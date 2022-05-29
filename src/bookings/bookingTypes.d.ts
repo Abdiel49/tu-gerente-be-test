@@ -1,6 +1,4 @@
-export type BookingState = 'Pendiente' | 'Pagado' | 'Eliminado'
-
-export type PayMethod = 'PayPal' | 'Tarjeta de crédito' | 'Tarjeta de débito' | 'Transferencia bancaria' | 'Efectivo'
+import { BookingStatus, PayMethod } from './emuns'
 
 // los detalles del cuarto reservado,
 // los días de estadía,
@@ -20,11 +18,8 @@ export interface DaysOfStay {
 
 export interface BillingInfo {
   name: String
-  lastName: String
   email?: String
   phone?: String
-  nit?: String
-  dni?: String
 }
 
 export interface PaymentData {
@@ -34,9 +29,15 @@ export interface PaymentData {
 
 export interface Booking {
   id: number
-  state: BookingState
-  roomDetail: RoomDetail
-  daysOfStay: DaysOfStay
-  billingInfo: BillingInfo
-  paymentData: PaymentData
+  roomId: number
+  roomNumber: number
+  checkIn: String
+  daysOfStay: number
+  bookingStatus: BookingStatus
+  payMethod: PayMethod
+  paymentAmount: number
+  clientName: String
+  clientPhone: String
 }
+
+export type BookingEntry = Omit<Booking, 'id'>
