@@ -3,6 +3,3 @@ node_modules/
 
 # rules tests
 declare.md
-
-# development changes
-build/
