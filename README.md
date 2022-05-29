@@ -1,6 +1,4 @@
-# Prueba tecnica tuGerente
-
-Prueba tecnica -> tuGerente
+# Prueba tecnica
 
 ### Run Server
 
@@ -16,13 +14,14 @@ npm install
 npm run dev
 ```
 
-## Endpints
+## Endpoints
 
 Base API endpoint `/api`  
-### Bookings Endpoints
 
 - hostserver: `localhost`
 - port?: `3000`
+
+### Bookings Endpoints
 
 #### `GET` `/api/bookings`
 
@@ -106,7 +105,7 @@ example request:
 
 Example return:
 
-Added the new booking id in response: `"id": 16`.
+Added the new booking field id in response: `"id": 16`.
 
 ```js
 {
@@ -137,7 +136,7 @@ Example:
 
 Return status code `400 Bad request` and message: `Booking status incorrect or missing field`
 
-## Booking Types
+## Booking Interface, Types & Enums
 
 #### Booking
 
@@ -185,9 +184,6 @@ enum PayMethod {
   Cash = 'Efectivo'
 }
 ```
-
-
-
 
 ## Descripcion
 🔴Utilizando Node.js y Express Framework, desarrollá los endpoints 
