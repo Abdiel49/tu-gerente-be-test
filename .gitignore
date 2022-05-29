@@ -3,3 +3,6 @@ node_modules/
 
 # rules tests
 declare.md
+
+# environments
+.env
