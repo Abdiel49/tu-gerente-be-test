@@ -32,13 +32,30 @@ route.post('/', (req, res) => {
 
 route.put('/:id', (req, res) => {
   const { id } = req.params
-  console.log('put bookings!', id)
-  res.send('pong')
+  // console.log('body', req.body)
+  if (Object.keys(req.body).length === 0) {
+    res.status(400).send('Bad request, body is required')
+  } else {
+    try {
+      const newBookingEntry = toNewBookingEntry(req.body)
+      const booking = bookingServices.updateBooking(+id, newBookingEntry)
+      res.json(booking)
+    } catch (error) {
+      const e = error as Error
+      res.status(400).send(e.message)
+    }
+  }
 })
 
 route.delete('/:id', (req, res) => {
   const { id } = req.params
-  console.log('delete bookings!', id)
-  res.send('pong')
+  try {
+    const bookingDeleted = bookingServices.deleteBooking(+id)
+    res.json(bookingDeleted)
+  } catch (error) {
+    const e = error as Error
+    res.status(400).send(e.message)
+  }
 })
+
 export default route
