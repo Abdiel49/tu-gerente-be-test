@@ -1,5 +1,37 @@
 # Prueba tecnica tuGerente
 
+Prueba tecnica -> tuGerente
+
+### Run Server
+
+```bash
+npm install
+npm start
+```
+
+### Run development server
+
+```bash
+npm install
+npm run dev
+```
+
+## Endpints
+
+Base API endpoint `/api/bookings`
+
+### Bookings Endpoints
+
+#### `GET` `/api/bookings`
+#### `GET` `/api/bookings/:id`
+#### `POST` `/api/bookings`
+
+
+## Types
+
+### Booking types
+
+
 ## Descripcion
 🔴Utilizando Node.js y Express Framework, desarrollá los endpoints 
 para el sistema de reservas de habitación de un hotel.
