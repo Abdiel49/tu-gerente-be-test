@@ -1,4 +1,4 @@
-import { BookingStatus, PayMethod } from './emuns'
+import { BookingStatus, PayMethod } from './enums'
 
 // los detalles del cuarto reservado,
 // los días de estadía,
