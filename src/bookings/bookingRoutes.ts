@@ -18,6 +18,7 @@ route.get('/:id', (req, res) => {
   res.send(booking)
 })
 
+/* Creating a new booking entry. */
 route.post('/', (req, res) => {
   try {
     const newBookingEntry = toNewBookingEntry(req.body)
