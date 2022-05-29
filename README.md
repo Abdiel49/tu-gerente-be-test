@@ -2,19 +2,33 @@
 
 ## Environments
 
-Use the `.env.example` for u
+Use the `.env.example` file for configure your local environment
 
-### Run Server
+* change the `.env.example` to `.env` file name
+
+### Install node packages
 
 ```bash
 npm install
+```
+
+### Build typescript project
+
+```bash
+npm run tsc
+npm start
+```
+
+### Run Server
+
+
+```bash
 npm start
 ```
 
 ### Run development server
 
 ```bash
-npm install
 npm run dev
 ```
 
