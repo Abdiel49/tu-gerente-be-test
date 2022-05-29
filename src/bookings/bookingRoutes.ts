@@ -24,9 +24,8 @@ route.post('/', (req, res) => {
     const booking = bookingServices.addBooking(newBookingEntry)
     res.json(booking)
   } catch (error) {
-    console.log('error post new booking', error)
-    console.log('error values', error)
-    res.status(400).send(error)
+    const e = error as Error
+    res.status(400).send(e.message)
   }
 })
 
