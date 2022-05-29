@@ -1,4 +1,8 @@
-# Prueba tecnica
+# Prueba tecnica 
+
+## Environments
+
+Use the `.env.example` for u
 
 ### Run Server
 
@@ -18,8 +22,7 @@ npm run dev
 
 Base API endpoint `/api`  
 
-- hostserver: `localhost`
-- port?: `3000`
+Exanple running in localhost: `http://localhost:3000/api/bookings/`
 
 ### Bookings Endpoints
 
